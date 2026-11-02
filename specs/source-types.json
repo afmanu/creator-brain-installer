@@ -1,0 +1,89 @@
+{
+  "schema_version": "0.1.0",
+  "types": [
+    {
+      "id": "current_llm_context",
+      "description": "Conversation, project instructions, attachments and other context visibly available in the current runtime.",
+      "default_retention": "metadata_and_approved_claims",
+      "requires_explicit_scope": true
+    },
+    {
+      "id": "attached_file",
+      "description": "A file explicitly attached by the user to the current interaction.",
+      "default_retention": "metadata_and_approved_claims",
+      "requires_explicit_scope": false
+    },
+    {
+      "id": "local_file",
+      "description": "A specific local file explicitly supplied or approved by the user.",
+      "default_retention": "metadata_and_approved_claims",
+      "requires_explicit_scope": false
+    },
+    {
+      "id": "local_directory",
+      "description": "An approved local directory whose relevant supported files may be inventoried before selective reading.",
+      "default_retention": "metadata_and_approved_claims",
+      "requires_explicit_scope": true
+    },
+    {
+      "id": "vault",
+      "description": "A structured knowledge directory such as an Obsidian vault or equivalent workspace.",
+      "default_retention": "metadata_and_approved_claims",
+      "requires_explicit_scope": true
+    },
+    {
+      "id": "repository",
+      "description": "A local or user-supplied repository containing relevant public identity, methods, content or instructions.",
+      "default_retention": "metadata_and_approved_claims",
+      "requires_explicit_scope": true
+    },
+    {
+      "id": "existing_profile",
+      "description": "Any existing personal, professional, brand, creator or AI collaboration profile.",
+      "default_retention": "metadata_and_approved_claims",
+      "requires_explicit_scope": false
+    },
+    {
+      "id": "professional_document",
+      "description": "CV, biography, portfolio, brand guide, strategy document, case study or related first-party material.",
+      "default_retention": "metadata_and_approved_claims",
+      "requires_explicit_scope": false
+    },
+    {
+      "id": "authored_content",
+      "description": "Posts, scripts, newsletters, articles, transcripts or other creator-authored material.",
+      "default_retention": "metadata_and_approved_claims",
+      "requires_explicit_scope": false
+    },
+    {
+      "id": "website",
+      "description": "A website or page explicitly supplied by the user.",
+      "default_retention": "metadata_and_approved_claims",
+      "requires_explicit_scope": false
+    },
+    {
+      "id": "social_profile",
+      "description": "A public social profile explicitly supplied by the user.",
+      "default_retention": "metadata_and_approved_claims",
+      "requires_explicit_scope": false
+    },
+    {
+      "id": "content_system",
+      "description": "An existing content or knowledge system used only as an optional evidence source.",
+      "default_retention": "metadata_and_approved_claims",
+      "requires_explicit_scope": true
+    },
+    {
+      "id": "direct_user_statement",
+      "description": "A statement supplied directly by the user during onboarding or correction.",
+      "default_retention": "approved_claim",
+      "requires_explicit_scope": false
+    },
+    {
+      "id": "calibration_output",
+      "description": "A generated scenario or content sample evaluated by the user during calibration.",
+      "default_retention": "approved_result_only",
+      "requires_explicit_scope": false
+    }
+  ]
+}

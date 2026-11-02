@@ -46,3 +46,29 @@ test("schema excludes operational Content OS state", async () => {
   const forbiddenPrefixes = ["calendar.", "tasks.", "publishing_queue.", "campaigns."];
   assert.equal(paths.some((field) => forbiddenPrefixes.some((prefix) => field.startsWith(prefix))), false);
 });
+
+test("source catalog supports generic existing context", async () => {
+  const catalog = JSON.parse(await readFile(path.join(root, "specs/source-types.json"), "utf8"));
+  const ids = catalog.types.map((source) => source.id);
+  assert.ok(ids.includes("current_llm_context"));
+  assert.ok(ids.includes("local_directory"));
+  assert.ok(ids.includes("vault"));
+  assert.ok(ids.includes("repository"));
+  assert.ok(ids.includes("existing_profile"));
+  assert.equal(ids.length, new Set(ids).size);
+});
+
+test("protocol questions include examples and reuse context before asking", async () => {
+  const protocol = await readFile(path.join(root, "specs/creator-brain-protocol.md"), "utf8");
+  const questions = protocol.split(/^### Question /gm).slice(1);
+  assert.ok(questions.length >= 10);
+  assert.ok(questions.every((section) => section.includes("Example:")));
+  assert.match(protocol, /avoid asking for information that approved context can answer/);
+});
+
+test("source originals and hidden LLM memory are outside the contract", async () => {
+  const sourceSchema = await readFile(path.join(root, "specs/source-schema.md"), "utf8");
+  const discovery = await readFile(path.join(root, "specs/context-discovery.md"), "utf8");
+  assert.match(sourceSchema, /"retain_originals": false/);
+  assert.match(discovery, /Never claim access to hidden model memory/);
+});

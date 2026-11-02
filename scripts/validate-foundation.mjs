@@ -16,7 +16,14 @@ const requiredFiles = [
   "specs/profile-schema.md",
   "specs/profile-fields.json",
   "specs/coverage-schema.md",
-  "specs/completion-schema.md"
+  "specs/completion-schema.md",
+  "specs/source-types.json",
+  "specs/source-schema.md",
+  "specs/evidence-schema.md",
+  "specs/context-discovery.md",
+  "specs/security-and-consent.md",
+  "specs/creator-brain-protocol.md",
+  "specs/setup-state-machine.md"
 ];
 
 const requiredPrefixes = [
@@ -50,10 +57,12 @@ export async function validateFoundation(root = defaultRoot) {
   }
 
   let catalog;
+  let sourceTypes;
   try {
     catalog = JSON.parse(await readFile(path.join(root, "specs/profile-fields.json"), "utf8"));
+    sourceTypes = JSON.parse(await readFile(path.join(root, "specs/source-types.json"), "utf8"));
   } catch (error) {
-    errors.push(`Invalid profile field catalog: ${error.message}`);
+    errors.push(`Invalid machine-readable schema: ${error.message}`);
     return { ok: false, errors };
   }
 
@@ -115,6 +124,10 @@ export async function validateFoundation(root = defaultRoot) {
   const productContract = await readFile(path.join(root, "docs/product-contract.md"), "utf8");
   const nonGoals = await readFile(path.join(root, "docs/non-goals.md"), "utf8");
   const experience = await readFile(path.join(root, "docs/installation-experience.md"), "utf8");
+  const protocol = await readFile(path.join(root, "specs/creator-brain-protocol.md"), "utf8");
+  const discovery = await readFile(path.join(root, "specs/context-discovery.md"), "utf8");
+  const sourceSchema = await readFile(path.join(root, "specs/source-schema.md"), "utf8");
+  const stateMachine = await readFile(path.join(root, "specs/setup-state-machine.md"), "utf8");
 
   if (!productContract.includes("accelerators, not dependencies")) {
     errors.push("Product independence is not explicit");
@@ -127,6 +140,41 @@ export async function validateFoundation(root = defaultRoot) {
     errors.push(`Expected six interactions, found ${interactionCount}`);
   }
 
+  const protocolInteractionCount = protocol.match(/^## Interaction [1-6] —/gm)?.length ?? 0;
+  if (protocolInteractionCount !== 6) {
+    errors.push(`Protocol must define six interactions, found ${protocolInteractionCount}`);
+  }
+  const protocolQuestions = protocol.split(/^### Question /gm).slice(1);
+  if (protocolQuestions.length === 0 || protocolQuestions.some((section) => !section.includes("Example:"))) {
+    errors.push("Every protocol question must include an example");
+  }
+  if (!discovery.includes("extract before asking") || !discovery.includes("current_llm_context")) {
+    errors.push("Context discovery does not implement reusable LLM context");
+  }
+  if (!sourceSchema.includes('"retain_originals": false')) {
+    errors.push("Source retention boundary is missing");
+  }
+  const requiredStates = ["intent_detected", "context_discovered", "sources_processed", "calibration_complete", "verified", "complete"];
+  for (const state of requiredStates) {
+    if (!stateMachine.includes(state)) {
+      errors.push(`State machine is missing: ${state}`);
+    }
+  }
+
+  if (sourceTypes.schema_version !== "0.1.0" || !Array.isArray(sourceTypes.types)) {
+    errors.push("Invalid source type catalog");
+  } else {
+    const ids = sourceTypes.types.map((source) => source.id);
+    if (ids.length !== new Set(ids).size) {
+      errors.push("Source type IDs must be unique");
+    }
+    for (const requiredType of ["current_llm_context", "local_directory", "existing_profile", "content_system", "direct_user_statement"]) {
+      if (!ids.includes(requiredType)) {
+        errors.push(`Source type is missing: ${requiredType}`);
+      }
+    }
+  }
+
   return {
     ok: errors.length === 0,
     errors,
@@ -135,7 +183,9 @@ export async function validateFoundation(root = defaultRoot) {
       criticalUniversalFields: catalog.universal.filter((field) => field.critical).length,
       conditionalModules: Object.keys(modules).length,
       conditionalFields: Object.values(modules).reduce((total, module) => total + module.fields.length, 0),
-      totalDefinedFields: allFields.length
+      totalDefinedFields: allFields.length,
+      sourceTypes: sourceTypes.types.length,
+      protocolQuestions: protocolQuestions.length
     }
   };
 }

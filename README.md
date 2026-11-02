@@ -6,7 +6,7 @@ The installed profile helps an AI understand who a creator is, what they stand f
 
 ## Status
 
-Foundation phase. The product contract and finite profile schema are implemented and validated. The guided installer is not yet available, so this repository must not claim that a link-only installation works.
+Protocol foundation phase. The product contract, finite profile schema, context-discovery policy, evidence model and six-interaction protocol are implemented and validated. Output compilation and blind runtime tests are still pending, so this repository must not claim that a link-only installation works.
 
 ## Product boundaries
 
