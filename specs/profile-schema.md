@@ -13,7 +13,7 @@ Every field definition contains:
 
 ## Profile value envelope
 
-Installed values use this shape:
+Installed values are stored in `.creator-brain/profile.json` under a flat `fields` object keyed by the dotted catalog path. Each value uses this shape:
 
 ```json
 {
@@ -21,6 +21,21 @@ Installed values use this shape:
   "status": "missing",
   "source_ids": [],
   "last_verified": null
+}
+```
+
+Example:
+
+```json
+{
+  "fields": {
+    "voice.tone": {
+      "value": "direct and analytical",
+      "status": "confirmed",
+      "source_ids": ["source-004"],
+      "last_verified": "2026-11-02"
+    }
+  }
 }
 ```
 

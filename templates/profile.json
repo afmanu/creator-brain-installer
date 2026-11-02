@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "schema_version": "0.1.0",
+    "profile_id": null,
+    "created_at": null,
+    "last_verified": null,
+    "status": "draft"
+  },
+  "modules": {
+    "commercial": "undecided",
+    "multi_channel": "undecided",
+    "team_brand": "undecided"
+  },
+  "fields": {}
+}

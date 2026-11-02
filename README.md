@@ -6,7 +6,18 @@ The installed profile helps an AI understand who a creator is, what they stand f
 
 ## Status
 
-Protocol foundation phase. The product contract, finite profile schema, context-discovery policy, evidence model and six-interaction protocol are implemented and validated. Output compilation and blind runtime tests are still pending, so this repository must not claim that a link-only installation works.
+Local beta candidate. The product contract, finite profile schema, context-discovery policy, evidence model, six-interaction protocol, output templates and runtime entrypoints are implemented and validated. Blind runtime tests are still pending, so link-only installation remains a beta claim that must be verified in each supported environment.
+
+## Quick start
+
+Open a capable local AI coding or collaboration environment and send:
+
+```text
+Instala este sistema:
+https://github.com/afmanu/creator-brain-installer
+```
+
+The agent should read `BOOTSTRAP.md`, detect its capabilities and begin interaction 1. Environments without local write access must use the assisted or manual handoff described in `INSTALL.md`.
 
 ## Product boundaries
 
@@ -29,7 +40,7 @@ Creator Brain models creative identity and decision criteria. It is not:
 - Finish only when every applicable field is resolved and every completion gate passes.
 - Never convert an inference into a confirmed fact.
 
-## Planned installed output
+## Installed output
 
 ```text
 my-creator-brain/
@@ -56,7 +67,7 @@ my-creator-brain/
     └── installation-report.md
 ```
 
-## Foundation validation
+## Validation
 
 ```text
 npm test

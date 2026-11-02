@@ -72,3 +72,34 @@ test("source originals and hidden LLM memory are outside the contract", async ()
   assert.match(sourceSchema, /"retain_originals": false/);
   assert.match(discovery, /Never claim access to hidden model memory/);
 });
+
+test("bootstrap routes installation through protocol and output contracts", async () => {
+  const bootstrap = await readFile(path.join(root, "BOOTSTRAP.md"), "utf8");
+  assert.match(bootstrap, /specs\/creator-brain-protocol\.md/);
+  assert.match(bootstrap, /specs\/output-contract\.md/);
+  assert.match(bootstrap, /Do not summarize the repository/);
+});
+
+test("runtime adapters use one portable core", async () => {
+  for (const relativePath of [
+    "templates/AGENTS.md",
+    "templates/CLAUDE.md",
+    "templates/GEMINI.md",
+    "templates/.cursor/rules/creator-brain.mdc"
+  ]) {
+    const content = await readFile(path.join(root, relativePath), "utf8");
+    assert.match(content, /CREATOR-CONTEXT\.md/);
+    assert.match(content, /CREATOR-GUIDE\.md/);
+  }
+});
+
+test("structured templates are valid JSON and preserve source privacy", async () => {
+  const profile = JSON.parse(await readFile(path.join(root, "templates/profile.json"), "utf8"));
+  const sources = JSON.parse(await readFile(path.join(root, "templates/sources.json"), "utf8"));
+  const coverage = JSON.parse(await readFile(path.join(root, "templates/coverage.json"), "utf8"));
+  const calibration = JSON.parse(await readFile(path.join(root, "templates/calibration.json"), "utf8"));
+  assert.deepEqual(profile.fields, {});
+  assert.equal(sources.policy.retain_originals, false);
+  assert.equal(coverage.status, "draft");
+  assert.equal(calibration.status, "pending");
+});

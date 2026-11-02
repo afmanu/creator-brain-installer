@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "applicable_fields": 0,
+  "resolved_fields": 0,
+  "coverage_percent": 0,
+  "critical_fields": 0,
+  "confirmed_critical_fields": 0,
+  "activated_modules": [],
+  "inactive_modules": [],
+  "missing_fields": [],
+  "open_conflicts": [],
+  "stale_fields": [],
+  "accepted_defaults": [],
+  "not_applicable_fields": [],
+  "gates": {},
+  "status": "draft"
+}

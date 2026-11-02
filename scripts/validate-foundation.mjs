@@ -7,6 +7,11 @@ const defaultRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const requiredFiles = [
   "README.md",
   "AGENTS.md",
+  "CLAUDE.md",
+  "GEMINI.md",
+  "BOOTSTRAP.md",
+  "INSTALL.md",
+  "QUICKSTART-ES.md",
   "LICENSE",
   "package.json",
   "docs/product-contract.md",
@@ -23,7 +28,32 @@ const requiredFiles = [
   "specs/context-discovery.md",
   "specs/security-and-consent.md",
   "specs/creator-brain-protocol.md",
-  "specs/setup-state-machine.md"
+  "specs/setup-state-machine.md",
+  "specs/output-contract.md",
+  "runtimes/generic.md",
+  "runtimes/codex.md",
+  "runtimes/claude.md",
+  "runtimes/cursor.md",
+  "runtimes/gemini.md",
+  "core/creator-guide.md",
+  "templates/START-HERE.md",
+  "templates/CREATOR-CONTEXT.md",
+  "templates/AGENTS.md",
+  "templates/CLAUDE.md",
+  "templates/GEMINI.md",
+  "templates/.cursor/rules/creator-brain.mdc",
+  "templates/modules/POSITIONING.md",
+  "templates/modules/AUDIENCE.md",
+  "templates/modules/OFFER.md",
+  "templates/modules/VOICE.md",
+  "templates/modules/CONTENT-STRATEGY.md",
+  "templates/modules/KNOWLEDGE-ASSETS.md",
+  "templates/profile.json",
+  "templates/sources.json",
+  "templates/coverage.json",
+  "templates/calibration.json",
+  "templates/state.md",
+  "templates/installation-report.md"
 ];
 
 const requiredPrefixes = [
@@ -128,6 +158,8 @@ export async function validateFoundation(root = defaultRoot) {
   const discovery = await readFile(path.join(root, "specs/context-discovery.md"), "utf8");
   const sourceSchema = await readFile(path.join(root, "specs/source-schema.md"), "utf8");
   const stateMachine = await readFile(path.join(root, "specs/setup-state-machine.md"), "utf8");
+  const bootstrap = await readFile(path.join(root, "BOOTSTRAP.md"), "utf8");
+  const outputContract = await readFile(path.join(root, "specs/output-contract.md"), "utf8");
 
   if (!productContract.includes("accelerators, not dependencies")) {
     errors.push("Product independence is not explicit");
@@ -154,6 +186,12 @@ export async function validateFoundation(root = defaultRoot) {
   if (!sourceSchema.includes('"retain_originals": false')) {
     errors.push("Source retention boundary is missing");
   }
+  if (!bootstrap.includes("specs/creator-brain-protocol.md") || !bootstrap.includes("specs/output-contract.md")) {
+    errors.push("Bootstrap does not route through protocol and output contracts");
+  }
+  if (!outputContract.includes("CREATOR-CONTEXT.md") || !outputContract.includes(".creator-brain/profile.json")) {
+    errors.push("Output contract is incomplete");
+  }
   const requiredStates = ["intent_detected", "context_discovered", "sources_processed", "calibration_complete", "verified", "complete"];
   for (const state of requiredStates) {
     if (!stateMachine.includes(state)) {
@@ -172,6 +210,21 @@ export async function validateFoundation(root = defaultRoot) {
       if (!ids.includes(requiredType)) {
         errors.push(`Source type is missing: ${requiredType}`);
       }
+    }
+  }
+
+  for (const relativePath of ["templates/profile.json", "templates/sources.json", "templates/coverage.json", "templates/calibration.json"]) {
+    try {
+      JSON.parse(await readFile(path.join(root, relativePath), "utf8"));
+    } catch (error) {
+      errors.push(`Invalid JSON template ${relativePath}: ${error.message}`);
+    }
+  }
+
+  for (const relativePath of ["templates/AGENTS.md", "templates/CLAUDE.md", "templates/GEMINI.md", "templates/.cursor/rules/creator-brain.mdc"]) {
+    const adapter = await readFile(path.join(root, relativePath), "utf8");
+    if (!adapter.includes("CREATOR-CONTEXT.md") || !adapter.includes("CREATOR-GUIDE.md")) {
+      errors.push(`Runtime adapter does not point to the universal core: ${relativePath}`);
     }
   }
 
@@ -198,7 +251,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     }
     process.exitCode = 1;
   } else {
-    console.log("Creator Brain foundation validation passed.");
+    console.log("Creator Brain package validation passed.");
     console.log(JSON.stringify(result.summary, null, 2));
   }
 }

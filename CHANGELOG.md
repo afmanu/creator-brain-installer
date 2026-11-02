@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0-beta.0
+
+- Added the canonical installation bootstrap and capability-based installation modes.
+- Added generic, Codex, Claude, Cursor and Gemini runtime guidance.
+- Added the complete installed output contract and portable templates.
+- Added the universal creator operating guide and runtime adapters.
+
 ## 0.2.0-foundation.0
 
 - Added generic discovery for current LLM context, files, folders, vaults, repositories and supplied external sources.
