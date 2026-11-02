@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1.0",
+  "applicable_fields": 94,
+  "resolved_fields": 94,
+  "coverage_percent": 100,
+  "critical_fields": 57,
+  "confirmed_critical_fields": 57,
+  "activated_modules": [
+    "commercial",
+    "multi_channel"
+  ],
+  "inactive_modules": [
+    "team_brand"
+  ],
+  "missing_fields": [],
+  "open_conflicts": [],
+  "stale_fields": [],
+  "accepted_defaults": [],
+  "not_applicable_fields": [],
+  "gates": {
+    "scope_confirmed": true,
+    "context_discovery_complete": true,
+    "source_consent_complete": true,
+    "coverage_complete": true,
+    "critical_fields_confirmed": true,
+    "conflicts_closed": true,
+    "creator_model_confirmed": true,
+    "creative_contract_confirmed": true,
+    "calibration_complete": true,
+    "representative_tests_passed": true,
+    "final_preview_approved": true,
+    "readback_verified": true
+  },
+  "status": "complete"
+}

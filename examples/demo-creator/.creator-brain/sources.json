@@ -1,0 +1,1840 @@
+{
+  "schema_version": "0.1.0",
+  "policy": {
+    "scope": "explicitly_authorized_only",
+    "retain_originals": false,
+    "default_retention": "metadata_and_approved_claims"
+  },
+  "sources": [
+    {
+      "id": "source-user",
+      "type": "direct_user_statement",
+      "label": "Synthetic onboarding answers",
+      "locator": "synthetic:user",
+      "scope": {
+        "included": [
+          "creator onboarding"
+        ],
+        "excluded": []
+      },
+      "permission": "approved",
+      "access": "conversation",
+      "access_status": "processed",
+      "authority": "user_confirmation",
+      "freshness": "current",
+      "retention": "approved_claim",
+      "processed_at": "2026-11-02T12:00:00Z",
+      "notes": "Synthetic fixture"
+    },
+    {
+      "id": "source-profile",
+      "type": "existing_profile",
+      "label": "Synthetic professional profile",
+      "locator": "synthetic:profile",
+      "scope": {
+        "included": [
+          "identity",
+          "positioning",
+          "offer"
+        ],
+        "excluded": []
+      },
+      "permission": "approved",
+      "access": "read_only",
+      "access_status": "processed",
+      "authority": "first_party_current",
+      "freshness": "current",
+      "retention": "metadata_and_approved_claims",
+      "processed_at": "2026-11-02T12:00:00Z",
+      "notes": "Original not retained"
+    },
+    {
+      "id": "source-content",
+      "type": "authored_content",
+      "label": "Synthetic approved content sample",
+      "locator": "synthetic:content",
+      "scope": {
+        "included": [
+          "voice",
+          "strategy",
+          "knowledge"
+        ],
+        "excluded": []
+      },
+      "permission": "approved",
+      "access": "read_only",
+      "access_status": "processed",
+      "authority": "first_party_current",
+      "freshness": "current",
+      "retention": "metadata_and_approved_claims",
+      "processed_at": "2026-11-02T12:00:00Z",
+      "notes": "Original not retained"
+    },
+    {
+      "id": "source-audience",
+      "type": "professional_document",
+      "label": "Synthetic audience brief",
+      "locator": "synthetic:audience",
+      "scope": {
+        "included": [
+          "audience"
+        ],
+        "excluded": []
+      },
+      "permission": "approved",
+      "access": "read_only",
+      "access_status": "processed",
+      "authority": "first_party_current",
+      "freshness": "current",
+      "retention": "metadata_and_approved_claims",
+      "processed_at": "2026-11-02T12:00:00Z",
+      "notes": "Original not retained"
+    },
+    {
+      "id": "source-calibration",
+      "type": "calibration_output",
+      "label": "Synthetic calibration session",
+      "locator": "synthetic:calibration",
+      "scope": {
+        "included": [
+          "quality",
+          "channels"
+        ],
+        "excluded": []
+      },
+      "permission": "approved",
+      "access": "generated",
+      "access_status": "processed",
+      "authority": "user_confirmation",
+      "freshness": "current",
+      "retention": "approved_result_only",
+      "processed_at": "2026-11-02T12:00:00Z",
+      "notes": "Approved choices only"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim-001",
+      "field_path": "scope.creator_type",
+      "value": "individual_creator",
+      "source_ids": [
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-002",
+      "field_path": "scope.creator_purpose",
+      "value": [
+        "Create rigorous AI education",
+        "Turn first-party experience into recognizable content",
+        "Connect useful content with a consulting offer"
+      ],
+      "source_ids": [
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-003",
+      "field_path": "scope.target_channels",
+      "value": [
+        "linkedin",
+        "youtube"
+      ],
+      "source_ids": [
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-004",
+      "field_path": "scope.content_languages",
+      "value": [
+        "Spanish"
+      ],
+      "source_ids": [
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-005",
+      "field_path": "scope.excluded_domains",
+      "value": [
+        "family",
+        "health",
+        "personal finance",
+        "private client information"
+      ],
+      "source_ids": [
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-006",
+      "field_path": "scope.public_private_boundary",
+      "value": "Use only approved professional experience and public creator identity; private life stays outside the profile.",
+      "source_ids": [
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-007",
+      "field_path": "identity.preferred_name",
+      "value": "Sofía",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-008",
+      "field_path": "identity.public_identity",
+      "value": "Sofía Vega, AI systems educator and consultant",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-009",
+      "field_path": "identity.professional_summary",
+      "value": "Sofía designs practical AI workflows for small professional teams and explains how to use them responsibly.",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-010",
+      "field_path": "identity.roles",
+      "value": [
+        "consultant",
+        "educator",
+        "creator"
+      ],
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-011",
+      "field_path": "identity.expertise_areas",
+      "value": [
+        "AI workflow design",
+        "LLM-assisted knowledge work",
+        "human approval systems"
+      ],
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-012",
+      "field_path": "identity.lived_experience",
+      "value": [
+        "Implemented AI workflows with small consulting teams",
+        "Trained non-technical professionals"
+      ],
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-013",
+      "field_path": "identity.credentials_and_proof",
+      "value": [
+        "Three documented client implementations",
+        "Two years teaching applied AI workshops"
+      ],
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-014",
+      "field_path": "identity.current_focus",
+      "value": "Reliable AI workflows that reduce repetitive work without removing human judgment.",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-015",
+      "field_path": "positioning.category",
+      "value": "Applied AI systems for small professional teams",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-016",
+      "field_path": "positioning.statement",
+      "value": "Sofía helps small professional teams turn scattered AI experiments into reliable workflows with clear human control.",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-017",
+      "field_path": "positioning.audience_promise",
+      "value": "Every piece should leave the audience with a clearer decision or a practical workflow they can adapt.",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-018",
+      "field_path": "positioning.unique_angle",
+      "value": "Combines implementation experience, plain-language teaching and explicit approval boundaries.",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-019",
+      "field_path": "positioning.authority_topics",
+      "value": [
+        "workflow design",
+        "LLM operating rules",
+        "AI adoption for small teams"
+      ],
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-020",
+      "field_path": "positioning.core_beliefs",
+      "value": [
+        "Prompts are not systems",
+        "Human approval should match risk",
+        "Useful AI work must be verifiable"
+      ],
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-021",
+      "field_path": "positioning.rejected_beliefs",
+      "value": [
+        "Every task needs an autonomous agent",
+        "More tools automatically create better systems"
+      ],
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-022",
+      "field_path": "positioning.differentiation",
+      "value": "Focuses on small, inspectable workflows instead of automation theatre or generic productivity advice.",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-023",
+      "field_path": "positioning.desired_perception",
+      "value": [
+        "rigorous",
+        "practical",
+        "clear",
+        "honest about limitations"
+      ],
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-024",
+      "field_path": "positioning.claim_boundaries",
+      "value": "Do not claim guaranteed productivity gains or universal results; qualify findings by context and evidence.",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-025",
+      "field_path": "audience.primary",
+      "value": "Founders and operations leads in small professional-service teams beginning to systematize AI use.",
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-026",
+      "field_path": "audience.secondary",
+      "value": [
+        "independent consultants",
+        "innovation leads"
+      ],
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-027",
+      "field_path": "audience.awareness_stage",
+      "value": "They use general AI tools but lack repeatable processes, evaluation and governance.",
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-028",
+      "field_path": "audience.problems",
+      "value": [
+        "Inconsistent outputs",
+        "Repeated prompting",
+        "No shared quality standard",
+        "Unclear approval boundaries"
+      ],
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-029",
+      "field_path": "audience.aspirations",
+      "value": [
+        "Reliable workflows",
+        "Faster delivery",
+        "Team-wide consistency",
+        "Controlled experimentation"
+      ],
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-030",
+      "field_path": "audience.objections",
+      "value": [
+        "AI systems sound too technical",
+        "Documentation will slow the team",
+        "The tools change too quickly"
+      ],
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-031",
+      "field_path": "audience.language",
+      "value": [
+        "workflow",
+        "process",
+        "quality check",
+        "approval",
+        "repeatable"
+      ],
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-032",
+      "field_path": "audience.misconceptions",
+      "value": [
+        "A longer prompt is a complete system",
+        "Autonomy is always more advanced"
+      ],
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-033",
+      "field_path": "audience.desired_transformation",
+      "value": "Move from individual AI experimentation to a shared, testable workflow.",
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-034",
+      "field_path": "audience.trust_barriers",
+      "value": [
+        "Overstated claims",
+        "Hidden implementation complexity",
+        "Examples without real constraints"
+      ],
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-035",
+      "field_path": "voice.summary",
+      "value": "Direct, analytical and practical, with calm confidence and explicit limitations.",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-036",
+      "field_path": "voice.personality",
+      "value": [
+        "curious",
+        "rigorous",
+        "constructive",
+        "opinionated when evidence supports it"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-037",
+      "field_path": "voice.tone",
+      "value": "Conversational and precise; critical of weak practices without attacking people.",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-038",
+      "field_path": "voice.register",
+      "value": "Professional plain Spanish with technical terms explained when they affect the decision.",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-039",
+      "field_path": "voice.rhythm",
+      "value": "Short opening, compact paragraphs and a deliberate progression from problem to mechanism to action.",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-040",
+      "field_path": "voice.vocabulary",
+      "value": {
+        "preferred": [
+          "sistema",
+          "criterio",
+          "evidencia",
+          "verificación"
+        ],
+        "avoid": [
+          "revolucionario",
+          "mágico",
+          "sin esfuerzo"
+        ]
+      },
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-041",
+      "field_path": "voice.characteristic_patterns",
+      "value": [
+        "Starts from an observed failure",
+        "Names the missing system component",
+        "Ends with an actionable test"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-042",
+      "field_path": "voice.storytelling_style",
+      "value": "Uses brief professional situations to reveal a decision or system principle.",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-043",
+      "field_path": "voice.humor_and_emotion",
+      "value": "Light dry humor is acceptable; manufactured outrage and fear are not.",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-044",
+      "field_path": "voice.explanation_depth",
+      "value": "Assume familiarity with common AI tools but explain architecture, risk and evaluation concepts.",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-045",
+      "field_path": "voice.hook_preferences",
+      "value": [
+        "Concrete observation",
+        "Counterintuitive system lesson",
+        "Specific failure pattern"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-046",
+      "field_path": "voice.structure_preferences",
+      "value": [
+        "Observation",
+        "Why it happens",
+        "System principle",
+        "Practical next step"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-047",
+      "field_path": "voice.prohibited_patterns",
+      "value": [
+        "Fake certainty",
+        "Invented personal stories",
+        "Engagement bait",
+        "Unsupported numerical claims"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-048",
+      "field_path": "voice.approved_samples",
+      "value": [
+        "A prompt gives you an answer. A system tells you what happens when the answer is wrong."
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-049",
+      "field_path": "voice.rejected_samples",
+      "value": [
+        "This insane AI hack will 10x your business overnight."
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-050",
+      "field_path": "strategy.content_objectives",
+      "value": [
+        "Build authority",
+        "Teach practical systems",
+        "Generate qualified consulting conversations"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-051",
+      "field_path": "strategy.success_signals",
+      "value": [
+        "Readers apply the workflow",
+        "Qualified questions reference the idea",
+        "The content is saved or shared for operational use"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-052",
+      "field_path": "strategy.content_pillars",
+      "value": [
+        "AI workflow architecture",
+        "Human approval and quality",
+        "Practical implementation lessons"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-053",
+      "field_path": "strategy.supporting_topics",
+      "value": [
+        "prompt design",
+        "knowledge organization",
+        "tool evaluation"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-054",
+      "field_path": "strategy.core_narratives",
+      "value": [
+        "From prompts to systems",
+        "Autonomy must follow risk",
+        "Verification is part of creation"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-055",
+      "field_path": "strategy.content_mix",
+      "value": {
+        "education": 50,
+        "opinion": 20,
+        "case": 20,
+        "commercial": 10
+      },
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-056",
+      "field_path": "strategy.preferred_formats",
+      "value": [
+        "LinkedIn text post",
+        "YouTube explainer",
+        "Short talking-head video"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-057",
+      "field_path": "strategy.channel_roles",
+      "value": {
+        "linkedin": "Develop and test professional ideas",
+        "youtube": "Teach complete systems with examples"
+      },
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-058",
+      "field_path": "strategy.originality_policy",
+      "value": "Use external material for evidence and contrast, but build the thesis from Sofía's experience and cite distinctive external ideas.",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-059",
+      "field_path": "strategy.research_and_evidence_policy",
+      "value": "Verify current technical claims with primary sources and distinguish fact, inference and opinion.",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-060",
+      "field_path": "strategy.publication_boundaries",
+      "value": [
+        "No client-identifying details",
+        "No unverified product claims",
+        "No publication without separate approval"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-061",
+      "field_path": "strategy.repurposing_rules",
+      "value": "Preserve the source thesis and evidence while rebuilding structure, depth and hook for each channel.",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-062",
+      "field_path": "knowledge.frameworks",
+      "value": [
+        "Risk-matched approval ladder",
+        "Prompt-to-workflow canvas",
+        "Evidence-before-automation checklist"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-063",
+      "field_path": "knowledge.stories",
+      "value": [
+        "A workshop where a shared rubric fixed inconsistent AI drafts"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-064",
+      "field_path": "knowledge.cases_and_results",
+      "value": [
+        "A syntheticized consulting case reducing repeated review loops through a shared quality contract"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-065",
+      "field_path": "knowledge.opinions",
+      "value": [
+        "Most teams need a better workflow before they need another model",
+        "A system without a failure path is a demo"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-066",
+      "field_path": "knowledge.recurring_questions",
+      "value": [
+        "Which tool should we choose?",
+        "How much autonomy is safe?",
+        "How do we keep outputs consistent?"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-067",
+      "field_path": "knowledge.reusable_assets",
+      "value": [
+        "Workflow canvas",
+        "Approval ladder diagram",
+        "Quality rubric"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-068",
+      "field_path": "knowledge.trusted_sources",
+      "value": [
+        "Official product documentation",
+        "Primary research",
+        "Direct implementation evidence"
+      ],
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-069",
+      "field_path": "knowledge.evidence_limits",
+      "value": "Do not generalize from a single implementation or present synthetic examples as client results.",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-070",
+      "field_path": "creative_contract.initiative_level",
+      "value": "Recommend a strong angle and improve weak structure without waiting, while exposing material assumptions.",
+      "source_ids": [
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-071",
+      "field_path": "creative_contract.clarification_policy",
+      "value": "Ask only when audience, claim or approval ambiguity would materially change the output; otherwise proceed with a declared reversible assumption.",
+      "source_ids": [
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-072",
+      "field_path": "creative_contract.autonomy_and_approvals",
+      "value": {
+        "allowed": [
+          "outline",
+          "draft",
+          "variants",
+          "quality review"
+        ],
+        "requires_approval": [
+          "profile change",
+          "external access",
+          "publication",
+          "client claim"
+        ]
+      },
+      "source_ids": [
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-073",
+      "field_path": "creative_contract.uncertainty_handling",
+      "value": "Label uncertainty, separate evidence from inference and propose the smallest verification step.",
+      "source_ids": [
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-074",
+      "field_path": "creative_contract.editing_policy",
+      "value": "Preserve the thesis and evidence; explain material reframing instead of silently changing the creator's position.",
+      "source_ids": [
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-075",
+      "field_path": "creative_contract.feedback_policy",
+      "value": "Treat repeated feedback as a proposed profile diff, never as automatic memory.",
+      "source_ids": [
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-076",
+      "field_path": "creative_contract.privacy_and_retention",
+      "value": "Retain source metadata and approved claims only; never retain private originals or normal conversation content.",
+      "source_ids": [
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-077",
+      "field_path": "creative_contract.prohibited_actions",
+      "value": [
+        "Invent experience",
+        "Claim publication",
+        "Use excluded private context",
+        "Present inference as fact"
+      ],
+      "source_ids": [
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-078",
+      "field_path": "creative_contract.quality_bar",
+      "value": "Every draft needs a clear audience problem, defensible thesis, creator advantage, evidence boundary and purposeful ending.",
+      "source_ids": [
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-079",
+      "field_path": "quality.representative_tasks",
+      "value": [
+        "Create a LinkedIn post from a workshop insight",
+        "Adapt the thesis into a YouTube outline"
+      ],
+      "source_ids": [
+        "source-calibration",
+        "source-user"
+      ],
+      "capture_method": "calibrated",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-080",
+      "field_path": "quality.success_criteria",
+      "value": [
+        "On-positioning",
+        "On-voice",
+        "Evidence-safe",
+        "Channel-appropriate",
+        "Actionable"
+      ],
+      "source_ids": [
+        "source-calibration",
+        "source-user"
+      ],
+      "capture_method": "calibrated",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-081",
+      "field_path": "quality.failure_modes",
+      "value": [
+        "Generic AI advice",
+        "Invented case",
+        "Hype language",
+        "Audience dilution",
+        "Unapproved commercial claim"
+      ],
+      "source_ids": [
+        "source-calibration",
+        "source-user"
+      ],
+      "capture_method": "calibrated",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-082",
+      "field_path": "quality.calibration_choices",
+      "value": [
+        "Recommend one angle",
+        "Prefer declared assumptions for reversible choices",
+        "Use conversational CTAs"
+      ],
+      "source_ids": [
+        "source-calibration",
+        "source-user"
+      ],
+      "capture_method": "calibrated",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-083",
+      "field_path": "quality.validation_results",
+      "value": {
+        "linkedin_draft": "pass",
+        "youtube_adaptation": "pass",
+        "claim_boundary": "pass",
+        "approval_boundary": "pass"
+      },
+      "source_ids": [
+        "source-calibration",
+        "source-user"
+      ],
+      "capture_method": "calibrated",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-084",
+      "field_path": "offer.summary",
+      "value": [
+        "AI workflow audit",
+        "Applied AI systems sprint"
+      ],
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-085",
+      "field_path": "offer.buyer_problem",
+      "value": "The team has scattered AI usage but no reliable shared workflow.",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-086",
+      "field_path": "offer.promised_transformation",
+      "value": "A documented and tested workflow with explicit inputs, quality checks and human approvals.",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-087",
+      "field_path": "offer.mechanism",
+      "value": "Audit current work, design the minimum workflow, test representative cases and train the team.",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-088",
+      "field_path": "offer.proof",
+      "value": [
+        "Approved syntheticized cases",
+        "Documented implementation artifacts"
+      ],
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-089",
+      "field_path": "offer.content_relationship",
+      "value": "Teach the underlying system completely; mention the offer only when implementation support is a natural next step.",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-090",
+      "field_path": "offer.calls_to_action",
+      "value": [
+        "Invite the reader to describe their current process",
+        "Offer an audit conversation when context is commercial"
+      ],
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-091",
+      "field_path": "offer.commercial_boundaries",
+      "value": [
+        "No urgency manipulation",
+        "No guaranteed ROI",
+        "No sales CTA on personal or purely educational stories"
+      ],
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "capture_method": "extracted",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-092",
+      "field_path": "channels.variations",
+      "value": {
+        "linkedin": "Compact professional argument",
+        "youtube": "Complete explanation with visual examples and implementation sequence"
+      },
+      "source_ids": [
+        "source-calibration",
+        "source-user"
+      ],
+      "capture_method": "calibrated",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-093",
+      "field_path": "channels.consistency_rules",
+      "value": [
+        "Same thesis",
+        "Same evidence boundaries",
+        "Same calm direct voice"
+      ],
+      "source_ids": [
+        "source-calibration",
+        "source-user"
+      ],
+      "capture_method": "calibrated",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    },
+    {
+      "id": "claim-094",
+      "field_path": "channels.adaptation_rules",
+      "value": "Rebuild the expression for channel behavior; never shorten by deleting the mechanism or expand by adding unsupported claims.",
+      "source_ids": [
+        "source-calibration",
+        "source-user"
+      ],
+      "capture_method": "calibrated",
+      "authority": "user_confirmation",
+      "confidence": "high",
+      "freshness": "current",
+      "status": "confirmed",
+      "conflicts_with": [],
+      "confirmed_at": "2026-11-02T12:00:00Z"
+    }
+  ]
+}

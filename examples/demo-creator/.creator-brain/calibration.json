@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1.0",
+  "scenarios": [
+    {
+      "id": "uncertainty",
+      "result": "pass",
+      "choice": "Label the limitation and propose verification"
+    },
+    {
+      "id": "initiative",
+      "result": "pass",
+      "choice": "Recommend one angle with a declared assumption"
+    }
+  ],
+  "output_tests": [
+    {
+      "id": "linkedin_draft",
+      "result": "pass"
+    },
+    {
+      "id": "claim_boundary",
+      "result": "pass"
+    },
+    {
+      "id": "approval_boundary",
+      "result": "pass"
+    }
+  ],
+  "channel_tests": [
+    {
+      "id": "linkedin_to_youtube",
+      "result": "pass"
+    }
+  ],
+  "resolved_choices": [
+    "Recommend one angle",
+    "Prefer declared assumptions for reversible choices",
+    "Use conversational CTAs"
+  ],
+  "status": "complete"
+}

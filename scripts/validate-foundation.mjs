@@ -18,6 +18,7 @@ const requiredFiles = [
   "docs/non-goals.md",
   "docs/installation-experience.md",
   "docs/schema-review.md",
+  "docs/beta-testing.md",
   "specs/profile-schema.md",
   "specs/profile-fields.json",
   "specs/coverage-schema.md",
@@ -53,7 +54,27 @@ const requiredFiles = [
   "templates/coverage.json",
   "templates/calibration.json",
   "templates/state.md",
-  "templates/installation-report.md"
+  "templates/installation-report.md",
+  "examples/demo-creator/README.md",
+  "examples/demo-creator/START-HERE.md",
+  "examples/demo-creator/CREATOR-CONTEXT.md",
+  "examples/demo-creator/CREATOR-GUIDE.md",
+  "examples/demo-creator/AGENTS.md",
+  "examples/demo-creator/CLAUDE.md",
+  "examples/demo-creator/GEMINI.md",
+  "examples/demo-creator/.cursor/rules/creator-brain.mdc",
+  "examples/demo-creator/modules/POSITIONING.md",
+  "examples/demo-creator/modules/AUDIENCE.md",
+  "examples/demo-creator/modules/OFFER.md",
+  "examples/demo-creator/modules/VOICE.md",
+  "examples/demo-creator/modules/CONTENT-STRATEGY.md",
+  "examples/demo-creator/modules/KNOWLEDGE-ASSETS.md",
+  "examples/demo-creator/.creator-brain/profile.json",
+  "examples/demo-creator/.creator-brain/sources.json",
+  "examples/demo-creator/.creator-brain/coverage.json",
+  "examples/demo-creator/.creator-brain/calibration.json",
+  "examples/demo-creator/.creator-brain/state.md",
+  "examples/demo-creator/.creator-brain/installation-report.md"
 ];
 
 const requiredPrefixes = [
@@ -226,6 +247,46 @@ export async function validateFoundation(root = defaultRoot) {
     if (!adapter.includes("CREATOR-CONTEXT.md") || !adapter.includes("CREATOR-GUIDE.md")) {
       errors.push(`Runtime adapter does not point to the universal core: ${relativePath}`);
     }
+  }
+
+  const demoRoot = path.join(root, "examples", "demo-creator");
+  try {
+    const demoProfile = JSON.parse(await readFile(path.join(demoRoot, ".creator-brain", "profile.json"), "utf8"));
+    const demoSources = JSON.parse(await readFile(path.join(demoRoot, ".creator-brain", "sources.json"), "utf8"));
+    const demoCoverage = JSON.parse(await readFile(path.join(demoRoot, ".creator-brain", "coverage.json"), "utf8"));
+    const demoCalibration = JSON.parse(await readFile(path.join(demoRoot, ".creator-brain", "calibration.json"), "utf8"));
+    const activeModuleNames = Object.entries(demoProfile.modules).filter(([, status]) => status === "active").map(([name]) => name);
+    const expectedDemoPaths = new Set([
+      ...catalog.universal.map((field) => field.path),
+      ...activeModuleNames.flatMap((name) => modules[name].fields.map((field) => field.path))
+    ]);
+    const actualDemoPaths = new Set(Object.keys(demoProfile.fields));
+    if (expectedDemoPaths.size !== actualDemoPaths.size || [...expectedDemoPaths].some((fieldPath) => !actualDemoPaths.has(fieldPath))) {
+      errors.push("Demo profile fields do not match applicable catalog fields");
+    }
+    if ([...actualDemoPaths].some((fieldPath) => demoProfile.fields[fieldPath].status !== "confirmed")) {
+      errors.push("Demo profile contains unresolved fields");
+    }
+    if (demoCoverage.coverage_percent !== 100 || demoCoverage.resolved_fields !== expectedDemoPaths.size || demoCoverage.status !== "complete") {
+      errors.push("Demo coverage is not complete");
+    }
+    if (Object.values(demoCoverage.gates).some((value) => value !== true)) {
+      errors.push("Demo completion gates do not all pass");
+    }
+    if (demoSources.policy.retain_originals !== false || demoSources.sources.some((source) => source.permission !== "approved")) {
+      errors.push("Demo source policy is invalid");
+    }
+    if (demoCalibration.status !== "complete") {
+      errors.push("Demo calibration is incomplete");
+    }
+    for (const relativePath of ["CREATOR-CONTEXT.md", "modules/POSITIONING.md", "modules/AUDIENCE.md", "modules/OFFER.md", "modules/VOICE.md", "modules/CONTENT-STRATEGY.md", "modules/KNOWLEDGE-ASSETS.md"]) {
+      const content = await readFile(path.join(demoRoot, relativePath), "utf8");
+      if (content.includes("{{")) {
+        errors.push(`Demo contains an unresolved placeholder: ${relativePath}`);
+      }
+    }
+  } catch (error) {
+    errors.push(`Invalid demo installation: ${error.message}`);
   }
 
   return {

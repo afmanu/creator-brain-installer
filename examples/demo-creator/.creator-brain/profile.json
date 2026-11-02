@@ -1,0 +1,1081 @@
+{
+  "meta": {
+    "schema_version": "0.1.0",
+    "profile_id": "demo-sofia-vega",
+    "created_at": "2026-11-02T12:00:00Z",
+    "last_verified": "2026-11-02",
+    "status": "complete"
+  },
+  "modules": {
+    "commercial": "active",
+    "multi_channel": "active",
+    "team_brand": "inactive"
+  },
+  "fields": {
+    "scope.creator_type": {
+      "value": "individual_creator",
+      "status": "confirmed",
+      "source_ids": [
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "scope.creator_purpose": {
+      "value": [
+        "Create rigorous AI education",
+        "Turn first-party experience into recognizable content",
+        "Connect useful content with a consulting offer"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "scope.target_channels": {
+      "value": [
+        "linkedin",
+        "youtube"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "scope.content_languages": {
+      "value": [
+        "Spanish"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "scope.excluded_domains": {
+      "value": [
+        "family",
+        "health",
+        "personal finance",
+        "private client information"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "scope.public_private_boundary": {
+      "value": "Use only approved professional experience and public creator identity; private life stays outside the profile.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "identity.preferred_name": {
+      "value": "Sofía",
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "identity.public_identity": {
+      "value": "Sofía Vega, AI systems educator and consultant",
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "identity.professional_summary": {
+      "value": "Sofía designs practical AI workflows for small professional teams and explains how to use them responsibly.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "identity.roles": {
+      "value": [
+        "consultant",
+        "educator",
+        "creator"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "identity.expertise_areas": {
+      "value": [
+        "AI workflow design",
+        "LLM-assisted knowledge work",
+        "human approval systems"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "identity.lived_experience": {
+      "value": [
+        "Implemented AI workflows with small consulting teams",
+        "Trained non-technical professionals"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "identity.credentials_and_proof": {
+      "value": [
+        "Three documented client implementations",
+        "Two years teaching applied AI workshops"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "identity.current_focus": {
+      "value": "Reliable AI workflows that reduce repetitive work without removing human judgment.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "positioning.category": {
+      "value": "Applied AI systems for small professional teams",
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "positioning.statement": {
+      "value": "Sofía helps small professional teams turn scattered AI experiments into reliable workflows with clear human control.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "positioning.audience_promise": {
+      "value": "Every piece should leave the audience with a clearer decision or a practical workflow they can adapt.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "positioning.unique_angle": {
+      "value": "Combines implementation experience, plain-language teaching and explicit approval boundaries.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "positioning.authority_topics": {
+      "value": [
+        "workflow design",
+        "LLM operating rules",
+        "AI adoption for small teams"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "positioning.core_beliefs": {
+      "value": [
+        "Prompts are not systems",
+        "Human approval should match risk",
+        "Useful AI work must be verifiable"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "positioning.rejected_beliefs": {
+      "value": [
+        "Every task needs an autonomous agent",
+        "More tools automatically create better systems"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "positioning.differentiation": {
+      "value": "Focuses on small, inspectable workflows instead of automation theatre or generic productivity advice.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "positioning.desired_perception": {
+      "value": [
+        "rigorous",
+        "practical",
+        "clear",
+        "honest about limitations"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "positioning.claim_boundaries": {
+      "value": "Do not claim guaranteed productivity gains or universal results; qualify findings by context and evidence.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "audience.primary": {
+      "value": "Founders and operations leads in small professional-service teams beginning to systematize AI use.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "audience.secondary": {
+      "value": [
+        "independent consultants",
+        "innovation leads"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "audience.awareness_stage": {
+      "value": "They use general AI tools but lack repeatable processes, evaluation and governance.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "audience.problems": {
+      "value": [
+        "Inconsistent outputs",
+        "Repeated prompting",
+        "No shared quality standard",
+        "Unclear approval boundaries"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "audience.aspirations": {
+      "value": [
+        "Reliable workflows",
+        "Faster delivery",
+        "Team-wide consistency",
+        "Controlled experimentation"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "audience.objections": {
+      "value": [
+        "AI systems sound too technical",
+        "Documentation will slow the team",
+        "The tools change too quickly"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "audience.language": {
+      "value": [
+        "workflow",
+        "process",
+        "quality check",
+        "approval",
+        "repeatable"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "audience.misconceptions": {
+      "value": [
+        "A longer prompt is a complete system",
+        "Autonomy is always more advanced"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "audience.desired_transformation": {
+      "value": "Move from individual AI experimentation to a shared, testable workflow.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "audience.trust_barriers": {
+      "value": [
+        "Overstated claims",
+        "Hidden implementation complexity",
+        "Examples without real constraints"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-audience",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "voice.summary": {
+      "value": "Direct, analytical and practical, with calm confidence and explicit limitations.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "voice.personality": {
+      "value": [
+        "curious",
+        "rigorous",
+        "constructive",
+        "opinionated when evidence supports it"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "voice.tone": {
+      "value": "Conversational and precise; critical of weak practices without attacking people.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "voice.register": {
+      "value": "Professional plain Spanish with technical terms explained when they affect the decision.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "voice.rhythm": {
+      "value": "Short opening, compact paragraphs and a deliberate progression from problem to mechanism to action.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "voice.vocabulary": {
+      "value": {
+        "preferred": [
+          "sistema",
+          "criterio",
+          "evidencia",
+          "verificación"
+        ],
+        "avoid": [
+          "revolucionario",
+          "mágico",
+          "sin esfuerzo"
+        ]
+      },
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "voice.characteristic_patterns": {
+      "value": [
+        "Starts from an observed failure",
+        "Names the missing system component",
+        "Ends with an actionable test"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "voice.storytelling_style": {
+      "value": "Uses brief professional situations to reveal a decision or system principle.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "voice.humor_and_emotion": {
+      "value": "Light dry humor is acceptable; manufactured outrage and fear are not.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "voice.explanation_depth": {
+      "value": "Assume familiarity with common AI tools but explain architecture, risk and evaluation concepts.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "voice.hook_preferences": {
+      "value": [
+        "Concrete observation",
+        "Counterintuitive system lesson",
+        "Specific failure pattern"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "voice.structure_preferences": {
+      "value": [
+        "Observation",
+        "Why it happens",
+        "System principle",
+        "Practical next step"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "voice.prohibited_patterns": {
+      "value": [
+        "Fake certainty",
+        "Invented personal stories",
+        "Engagement bait",
+        "Unsupported numerical claims"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "voice.approved_samples": {
+      "value": [
+        "A prompt gives you an answer. A system tells you what happens when the answer is wrong."
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "voice.rejected_samples": {
+      "value": [
+        "This insane AI hack will 10x your business overnight."
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "strategy.content_objectives": {
+      "value": [
+        "Build authority",
+        "Teach practical systems",
+        "Generate qualified consulting conversations"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "strategy.success_signals": {
+      "value": [
+        "Readers apply the workflow",
+        "Qualified questions reference the idea",
+        "The content is saved or shared for operational use"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "strategy.content_pillars": {
+      "value": [
+        "AI workflow architecture",
+        "Human approval and quality",
+        "Practical implementation lessons"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "strategy.supporting_topics": {
+      "value": [
+        "prompt design",
+        "knowledge organization",
+        "tool evaluation"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "strategy.core_narratives": {
+      "value": [
+        "From prompts to systems",
+        "Autonomy must follow risk",
+        "Verification is part of creation"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "strategy.content_mix": {
+      "value": {
+        "education": 50,
+        "opinion": 20,
+        "case": 20,
+        "commercial": 10
+      },
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "strategy.preferred_formats": {
+      "value": [
+        "LinkedIn text post",
+        "YouTube explainer",
+        "Short talking-head video"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "strategy.channel_roles": {
+      "value": {
+        "linkedin": "Develop and test professional ideas",
+        "youtube": "Teach complete systems with examples"
+      },
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "strategy.originality_policy": {
+      "value": "Use external material for evidence and contrast, but build the thesis from Sofía's experience and cite distinctive external ideas.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "strategy.research_and_evidence_policy": {
+      "value": "Verify current technical claims with primary sources and distinguish fact, inference and opinion.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "strategy.publication_boundaries": {
+      "value": [
+        "No client-identifying details",
+        "No unverified product claims",
+        "No publication without separate approval"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "strategy.repurposing_rules": {
+      "value": "Preserve the source thesis and evidence while rebuilding structure, depth and hook for each channel.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "knowledge.frameworks": {
+      "value": [
+        "Risk-matched approval ladder",
+        "Prompt-to-workflow canvas",
+        "Evidence-before-automation checklist"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "knowledge.stories": {
+      "value": [
+        "A workshop where a shared rubric fixed inconsistent AI drafts"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "knowledge.cases_and_results": {
+      "value": [
+        "A syntheticized consulting case reducing repeated review loops through a shared quality contract"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "knowledge.opinions": {
+      "value": [
+        "Most teams need a better workflow before they need another model",
+        "A system without a failure path is a demo"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "knowledge.recurring_questions": {
+      "value": [
+        "Which tool should we choose?",
+        "How much autonomy is safe?",
+        "How do we keep outputs consistent?"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "knowledge.reusable_assets": {
+      "value": [
+        "Workflow canvas",
+        "Approval ladder diagram",
+        "Quality rubric"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "knowledge.trusted_sources": {
+      "value": [
+        "Official product documentation",
+        "Primary research",
+        "Direct implementation evidence"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "knowledge.evidence_limits": {
+      "value": "Do not generalize from a single implementation or present synthetic examples as client results.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-content",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "creative_contract.initiative_level": {
+      "value": "Recommend a strong angle and improve weak structure without waiting, while exposing material assumptions.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "creative_contract.clarification_policy": {
+      "value": "Ask only when audience, claim or approval ambiguity would materially change the output; otherwise proceed with a declared reversible assumption.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "creative_contract.autonomy_and_approvals": {
+      "value": {
+        "allowed": [
+          "outline",
+          "draft",
+          "variants",
+          "quality review"
+        ],
+        "requires_approval": [
+          "profile change",
+          "external access",
+          "publication",
+          "client claim"
+        ]
+      },
+      "status": "confirmed",
+      "source_ids": [
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "creative_contract.uncertainty_handling": {
+      "value": "Label uncertainty, separate evidence from inference and propose the smallest verification step.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "creative_contract.editing_policy": {
+      "value": "Preserve the thesis and evidence; explain material reframing instead of silently changing the creator's position.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "creative_contract.feedback_policy": {
+      "value": "Treat repeated feedback as a proposed profile diff, never as automatic memory.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "creative_contract.privacy_and_retention": {
+      "value": "Retain source metadata and approved claims only; never retain private originals or normal conversation content.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "creative_contract.prohibited_actions": {
+      "value": [
+        "Invent experience",
+        "Claim publication",
+        "Use excluded private context",
+        "Present inference as fact"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "creative_contract.quality_bar": {
+      "value": "Every draft needs a clear audience problem, defensible thesis, creator advantage, evidence boundary and purposeful ending.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "quality.representative_tasks": {
+      "value": [
+        "Create a LinkedIn post from a workshop insight",
+        "Adapt the thesis into a YouTube outline"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-calibration",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "quality.success_criteria": {
+      "value": [
+        "On-positioning",
+        "On-voice",
+        "Evidence-safe",
+        "Channel-appropriate",
+        "Actionable"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-calibration",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "quality.failure_modes": {
+      "value": [
+        "Generic AI advice",
+        "Invented case",
+        "Hype language",
+        "Audience dilution",
+        "Unapproved commercial claim"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-calibration",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "quality.calibration_choices": {
+      "value": [
+        "Recommend one angle",
+        "Prefer declared assumptions for reversible choices",
+        "Use conversational CTAs"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-calibration",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "quality.validation_results": {
+      "value": {
+        "linkedin_draft": "pass",
+        "youtube_adaptation": "pass",
+        "claim_boundary": "pass",
+        "approval_boundary": "pass"
+      },
+      "status": "confirmed",
+      "source_ids": [
+        "source-calibration",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "offer.summary": {
+      "value": [
+        "AI workflow audit",
+        "Applied AI systems sprint"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "offer.buyer_problem": {
+      "value": "The team has scattered AI usage but no reliable shared workflow.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "offer.promised_transformation": {
+      "value": "A documented and tested workflow with explicit inputs, quality checks and human approvals.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "offer.mechanism": {
+      "value": "Audit current work, design the minimum workflow, test representative cases and train the team.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "offer.proof": {
+      "value": [
+        "Approved syntheticized cases",
+        "Documented implementation artifacts"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "offer.content_relationship": {
+      "value": "Teach the underlying system completely; mention the offer only when implementation support is a natural next step.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "offer.calls_to_action": {
+      "value": [
+        "Invite the reader to describe their current process",
+        "Offer an audit conversation when context is commercial"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "offer.commercial_boundaries": {
+      "value": [
+        "No urgency manipulation",
+        "No guaranteed ROI",
+        "No sales CTA on personal or purely educational stories"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-profile",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "channels.variations": {
+      "value": {
+        "linkedin": "Compact professional argument",
+        "youtube": "Complete explanation with visual examples and implementation sequence"
+      },
+      "status": "confirmed",
+      "source_ids": [
+        "source-calibration",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "channels.consistency_rules": {
+      "value": [
+        "Same thesis",
+        "Same evidence boundaries",
+        "Same calm direct voice"
+      ],
+      "status": "confirmed",
+      "source_ids": [
+        "source-calibration",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    },
+    "channels.adaptation_rules": {
+      "value": "Rebuild the expression for channel behavior; never shorten by deleting the mechanism or expand by adding unsupported claims.",
+      "status": "confirmed",
+      "source_ids": [
+        "source-calibration",
+        "source-user"
+      ],
+      "last_verified": "2026-11-02"
+    }
+  }
+}

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.0-beta.0
+
+- Added a complete synthetic Creator Brain installation generated from the finite field catalog.
+- Added field-level provenance, calibration and coverage validation for the demo.
+- Added the blind-test matrix required before a public release claim.
+
 ## 0.3.0-beta.0
 
 - Added the canonical installation bootstrap and capability-based installation modes.

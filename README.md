@@ -19,6 +19,8 @@ https://github.com/afmanu/creator-brain-installer
 
 The agent should read `BOOTSTRAP.md`, detect its capabilities and begin interaction 1. Environments without local write access must use the assisted or manual handoff described in `INSTALL.md`.
 
+See `examples/demo-creator/` for a complete synthetic installation with existing-context reuse, commercial and multi-channel modules activated.
+
 ## Product boundaries
 
 Creator Brain models creative identity and decision criteria. It is not:

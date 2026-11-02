@@ -103,3 +103,27 @@ test("structured templates are valid JSON and preserve source privacy", async ()
   assert.equal(coverage.status, "draft");
   assert.equal(calibration.status, "pending");
 });
+
+test("synthetic demo proves complete applicable field coverage", async () => {
+  const profile = JSON.parse(await readFile(path.join(root, "examples/demo-creator/.creator-brain/profile.json"), "utf8"));
+  const coverage = JSON.parse(await readFile(path.join(root, "examples/demo-creator/.creator-brain/coverage.json"), "utf8"));
+  assert.equal(profile.meta.status, "complete");
+  assert.equal(coverage.coverage_percent, 100);
+  assert.equal(Object.keys(profile.fields).length, coverage.applicable_fields);
+  assert.ok(Object.values(profile.fields).every((field) => field.status === "confirmed"));
+});
+
+test("synthetic demo retains provenance but not source originals", async () => {
+  const sources = JSON.parse(await readFile(path.join(root, "examples/demo-creator/.creator-brain/sources.json"), "utf8"));
+  assert.equal(sources.policy.retain_originals, false);
+  assert.ok(sources.sources.every((source) => source.permission === "approved"));
+  assert.ok(sources.claims.length > 80);
+});
+
+test("synthetic demo adapters route to the portable core", async () => {
+  for (const relativePath of ["AGENTS.md", "CLAUDE.md", "GEMINI.md", ".cursor/rules/creator-brain.mdc"]) {
+    const content = await readFile(path.join(root, "examples", "demo-creator", relativePath), "utf8");
+    assert.match(content, /CREATOR-CONTEXT\.md/);
+    assert.match(content, /CREATOR-GUIDE\.md/);
+  }
+});
