@@ -1,0 +1,128 @@
+{
+  "schema_version": "0.1.0",
+  "universal": [
+    { "path": "scope.creator_type", "critical": true, "description": "Whether the profile represents an individual creator, founder-led brand or another single creator identity.", "evidence": ["direct", "existing_context"] },
+    { "path": "scope.creator_purpose", "critical": true, "description": "The outcomes the creator expects from using the Creator Brain.", "evidence": ["direct"] },
+    { "path": "scope.target_channels", "critical": false, "description": "Channels where the profile should support creation.", "evidence": ["direct", "published_content"] },
+    { "path": "scope.content_languages", "critical": false, "description": "Languages and locale expectations for content.", "evidence": ["direct", "published_content"] },
+    { "path": "scope.excluded_domains", "critical": true, "description": "Subjects and life areas that must remain outside the profile.", "evidence": ["direct"] },
+    { "path": "scope.public_private_boundary", "critical": true, "description": "Boundary between usable public identity and private information.", "evidence": ["direct"] },
+
+    { "path": "identity.preferred_name", "critical": false, "description": "Name the system should use for the creator.", "evidence": ["direct", "existing_context"] },
+    { "path": "identity.public_identity", "critical": true, "description": "How the creator presents themselves publicly.", "evidence": ["direct", "profile", "website"] },
+    { "path": "identity.professional_summary", "critical": true, "description": "Current professional context relevant to content.", "evidence": ["direct", "cv", "website"] },
+    { "path": "identity.roles", "critical": true, "description": "Roles from which the creator speaks or creates.", "evidence": ["direct", "cv", "existing_context"] },
+    { "path": "identity.expertise_areas", "critical": true, "description": "Areas where the creator can make authoritative claims.", "evidence": ["direct", "work_samples", "published_content"] },
+    { "path": "identity.lived_experience", "critical": false, "description": "Relevant experiences that may support authentic stories or opinions.", "evidence": ["direct", "authored_material"] },
+    { "path": "identity.credentials_and_proof", "critical": false, "description": "Credentials, results and evidence that substantiate authority.", "evidence": ["direct", "cv", "case_study"] },
+    { "path": "identity.current_focus", "critical": true, "description": "Current work and themes the creator wants associated with their identity.", "evidence": ["direct", "current_profile", "recent_content"] },
+
+    { "path": "positioning.category", "critical": true, "description": "Category or territory in which the creator wants to be understood.", "evidence": ["direct", "website", "published_content"] },
+    { "path": "positioning.statement", "critical": true, "description": "Concise statement connecting creator, audience, problem and distinctive value.", "evidence": ["direct", "calibration"] },
+    { "path": "positioning.audience_promise", "critical": true, "description": "Value the audience can consistently expect from the creator's content.", "evidence": ["direct", "published_content"] },
+    { "path": "positioning.unique_angle", "critical": true, "description": "The creator's distinct perspective, mechanism or combination of experience.", "evidence": ["direct", "authored_material", "calibration"] },
+    { "path": "positioning.authority_topics", "critical": true, "description": "Topics the creator owns or intends to own.", "evidence": ["direct", "published_content", "work_samples"] },
+    { "path": "positioning.core_beliefs", "critical": true, "description": "Beliefs and principles that shape the creator's point of view.", "evidence": ["direct", "authored_material"] },
+    { "path": "positioning.rejected_beliefs", "critical": false, "description": "Common ideas, practices or narratives the creator explicitly rejects.", "evidence": ["direct", "authored_material"] },
+    { "path": "positioning.differentiation", "critical": true, "description": "Meaningful differences from alternatives or adjacent creators.", "evidence": ["direct", "market_context", "calibration"] },
+    { "path": "positioning.desired_perception", "critical": false, "description": "How the creator wants the audience to describe them.", "evidence": ["direct"] },
+    { "path": "positioning.claim_boundaries", "critical": true, "description": "Claims the creator may make and claims that require qualification or must be avoided.", "evidence": ["direct", "evidence_review"] },
+
+    { "path": "audience.primary", "critical": true, "description": "Primary audience the content is designed to help or influence.", "evidence": ["direct", "customer_material", "published_content"] },
+    { "path": "audience.secondary", "critical": false, "description": "Secondary audiences that may be served without diluting the primary audience.", "evidence": ["direct", "customer_material"] },
+    { "path": "audience.awareness_stage", "critical": true, "description": "Typical knowledge and problem-awareness level of the primary audience.", "evidence": ["direct", "customer_material", "calibration"] },
+    { "path": "audience.problems", "critical": true, "description": "Important problems, pains and jobs the audience is trying to resolve.", "evidence": ["direct", "customer_material", "comments"] },
+    { "path": "audience.aspirations", "critical": true, "description": "Outcomes, identity and progress the audience wants.", "evidence": ["direct", "customer_material", "comments"] },
+    { "path": "audience.objections", "critical": true, "description": "Reasons the audience resists the creator's ideas, methods or offers.", "evidence": ["direct", "customer_material", "comments"] },
+    { "path": "audience.language", "critical": false, "description": "Words, phrases and conceptual frames naturally used by the audience.", "evidence": ["customer_material", "comments", "research"] },
+    { "path": "audience.misconceptions", "critical": false, "description": "Incorrect assumptions the content should correct.", "evidence": ["direct", "comments", "published_content"] },
+    { "path": "audience.desired_transformation", "critical": true, "description": "Change the content should help the audience achieve.", "evidence": ["direct", "customer_material"] },
+    { "path": "audience.trust_barriers", "critical": false, "description": "Factors that prevent the audience from trusting the creator or message.", "evidence": ["direct", "customer_material", "comments"] },
+
+    { "path": "voice.summary", "critical": true, "description": "Concise description of the recognizable creator voice.", "evidence": ["direct", "approved_samples", "calibration"] },
+    { "path": "voice.personality", "critical": true, "description": "Stable personality traits expressed through content.", "evidence": ["approved_samples", "direct", "calibration"] },
+    { "path": "voice.tone", "critical": true, "description": "Default tone and permitted contextual variations.", "evidence": ["approved_samples", "direct", "calibration"] },
+    { "path": "voice.register", "critical": false, "description": "Formality, technicality and social register.", "evidence": ["approved_samples", "calibration"] },
+    { "path": "voice.rhythm", "critical": false, "description": "Pacing, paragraph density and sentence-length tendencies.", "evidence": ["approved_samples"] },
+    { "path": "voice.vocabulary", "critical": false, "description": "Preferred terminology, recurring words and vocabulary exclusions.", "evidence": ["approved_samples", "direct"] },
+    { "path": "voice.characteristic_patterns", "critical": false, "description": "Recognizable rhetorical and structural habits worth preserving.", "evidence": ["approved_samples"] },
+    { "path": "voice.storytelling_style", "critical": false, "description": "How the creator uses personal stories, cases and narrative progression.", "evidence": ["approved_samples", "direct"] },
+    { "path": "voice.humor_and_emotion", "critical": false, "description": "Allowed humor, emotional intensity and emotional boundaries.", "evidence": ["approved_samples", "direct"] },
+    { "path": "voice.explanation_depth", "critical": true, "description": "Expected depth, assumed knowledge and explanation behavior.", "evidence": ["direct", "approved_samples", "calibration"] },
+    { "path": "voice.hook_preferences", "critical": false, "description": "Opening patterns that fit or do not fit the creator.", "evidence": ["approved_samples", "rejected_samples", "calibration"] },
+    { "path": "voice.structure_preferences", "critical": false, "description": "Preferred content progression and ending patterns.", "evidence": ["approved_samples", "calibration"] },
+    { "path": "voice.prohibited_patterns", "critical": true, "description": "Language and stylistic behaviors that must never be used.", "evidence": ["direct", "rejected_samples", "calibration"] },
+    { "path": "voice.approved_samples", "critical": true, "description": "Representative content or calibrated outputs explicitly approved as on-voice.", "evidence": ["approved_samples", "calibration"] },
+    { "path": "voice.rejected_samples", "critical": false, "description": "Examples and reasons that define what is off-voice.", "evidence": ["rejected_samples", "calibration"] },
+
+    { "path": "strategy.content_objectives", "critical": true, "description": "Outcomes content should produce for audience and creator.", "evidence": ["direct", "strategy_document"] },
+    { "path": "strategy.success_signals", "critical": true, "description": "Observable signals that content is serving its intended purpose.", "evidence": ["direct", "strategy_document"] },
+    { "path": "strategy.content_pillars", "critical": true, "description": "Stable thematic pillars with clear purpose and boundaries.", "evidence": ["direct", "published_content", "calibration"] },
+    { "path": "strategy.supporting_topics", "critical": false, "description": "Supporting topics that reinforce rather than dilute the pillars.", "evidence": ["published_content", "direct"] },
+    { "path": "strategy.core_narratives", "critical": true, "description": "Recurring narratives that connect beliefs, experience and audience transformation.", "evidence": ["authored_material", "direct", "calibration"] },
+    { "path": "strategy.content_mix", "critical": false, "description": "Desired balance between education, opinion, proof, story and commercial content.", "evidence": ["direct", "strategy_document"] },
+    { "path": "strategy.preferred_formats", "critical": false, "description": "Formats that fit the creator's strengths and goals.", "evidence": ["direct", "published_content"] },
+    { "path": "strategy.channel_roles", "critical": false, "description": "Purpose of each active channel.", "evidence": ["direct", "strategy_document"] },
+    { "path": "strategy.originality_policy", "critical": true, "description": "Rules for using inspiration while protecting original thought and attribution.", "evidence": ["direct"] },
+    { "path": "strategy.research_and_evidence_policy", "critical": true, "description": "Research, citation, recency and fact-checking expectations.", "evidence": ["direct", "calibration"] },
+    { "path": "strategy.publication_boundaries", "critical": true, "description": "Subjects, timing and conditions under which content must not be prepared as publishable.", "evidence": ["direct"] },
+    { "path": "strategy.repurposing_rules", "critical": false, "description": "How ideas may be adapted without losing context, provenance or channel fit.", "evidence": ["direct", "calibration"] },
+
+    { "path": "knowledge.frameworks", "critical": false, "description": "Named methods and frameworks the creator owns or uses.", "evidence": ["documents", "published_content", "direct"] },
+    { "path": "knowledge.stories", "critical": false, "description": "Approved personal or professional stories with usage boundaries.", "evidence": ["direct", "authored_material"] },
+    { "path": "knowledge.cases_and_results", "critical": false, "description": "Approved cases, outcomes and proof available for content.", "evidence": ["case_study", "direct"] },
+    { "path": "knowledge.opinions", "critical": false, "description": "Developed opinions that can support creator-led content.", "evidence": ["authored_material", "direct"] },
+    { "path": "knowledge.recurring_questions", "critical": false, "description": "Questions repeatedly asked by the audience or clients.", "evidence": ["comments", "customer_material", "direct"] },
+    { "path": "knowledge.reusable_assets", "critical": false, "description": "Approved reusable diagrams, models, data and content assets.", "evidence": ["documents", "direct"] },
+    { "path": "knowledge.trusted_sources", "critical": false, "description": "Source types or named sources the creator trusts.", "evidence": ["direct", "research_document"] },
+    { "path": "knowledge.evidence_limits", "critical": true, "description": "Limits on what may be claimed from available knowledge and proof.", "evidence": ["direct", "evidence_review"] },
+
+    { "path": "creative_contract.initiative_level", "critical": true, "description": "How proactively the AI should propose angles, claims and improvements.", "evidence": ["direct", "calibration"] },
+    { "path": "creative_contract.clarification_policy", "critical": true, "description": "When the AI should ask and when it may proceed with a declared assumption.", "evidence": ["direct", "calibration"] },
+    { "path": "creative_contract.autonomy_and_approvals", "critical": true, "description": "Actions allowed without approval and decisions reserved for the user.", "evidence": ["direct"] },
+    { "path": "creative_contract.uncertainty_handling", "critical": true, "description": "How missing evidence, ambiguity and disagreement must be communicated.", "evidence": ["direct", "calibration"] },
+    { "path": "creative_contract.editing_policy", "critical": false, "description": "Expected behavior when rewriting or adapting creator material.", "evidence": ["direct", "calibration"] },
+    { "path": "creative_contract.feedback_policy", "critical": false, "description": "How corrections become proposed profile improvements.", "evidence": ["direct"] },
+    { "path": "creative_contract.privacy_and_retention", "critical": true, "description": "Rules for retaining source metadata, excerpts and private information.", "evidence": ["direct"] },
+    { "path": "creative_contract.prohibited_actions", "critical": true, "description": "Actions the Creator Brain must never take or imply it has taken.", "evidence": ["direct"] },
+    { "path": "creative_contract.quality_bar", "critical": true, "description": "Minimum standard a deliverable must meet before presentation.", "evidence": ["direct", "approved_samples", "calibration"] },
+
+    { "path": "quality.representative_tasks", "critical": true, "description": "Realistic tasks used to test the profile.", "evidence": ["direct"] },
+    { "path": "quality.success_criteria", "critical": true, "description": "Observable criteria for successful outputs across representative tasks.", "evidence": ["direct", "calibration"] },
+    { "path": "quality.failure_modes", "critical": true, "description": "Critical errors that invalidate an output.", "evidence": ["direct", "rejected_samples", "calibration"] },
+    { "path": "quality.calibration_choices", "critical": true, "description": "Confirmed choices made during scenario and output calibration.", "evidence": ["calibration"] },
+    { "path": "quality.validation_results", "critical": true, "description": "Results of representative profile tests.", "evidence": ["calibration"] }
+  ],
+  "modules": {
+    "commercial": {
+      "activation_condition": "Content supports an offer, product, service, lead action or commercial relationship.",
+      "fields": [
+        { "path": "offer.summary", "critical": true, "description": "Current offer or offer portfolio relevant to content.", "evidence": ["direct", "website", "sales_document"] },
+        { "path": "offer.buyer_problem", "critical": true, "description": "Problem each offer is designed to solve.", "evidence": ["direct", "sales_document"] },
+        { "path": "offer.promised_transformation", "critical": true, "description": "Credible transformation associated with the offer.", "evidence": ["direct", "sales_document", "case_study"] },
+        { "path": "offer.mechanism", "critical": false, "description": "Method or mechanism through which the offer creates value.", "evidence": ["direct", "sales_document"] },
+        { "path": "offer.proof", "critical": false, "description": "Approved proof that may substantiate offer-related content.", "evidence": ["case_study", "direct"] },
+        { "path": "offer.content_relationship", "critical": true, "description": "How content should connect to the offer without distorting editorial value.", "evidence": ["direct", "strategy_document"] },
+        { "path": "offer.calls_to_action", "critical": false, "description": "Permitted calls to action and their appropriate contexts.", "evidence": ["direct", "published_content"] },
+        { "path": "offer.commercial_boundaries", "critical": true, "description": "Commercial claims and selling behaviors that must be avoided.", "evidence": ["direct"] }
+      ]
+    },
+    "multi_channel": {
+      "activation_condition": "The creator wants the profile to support more than one channel with meaningful adaptation.",
+      "fields": [
+        { "path": "channels.variations", "critical": true, "description": "Voice, depth and format differences required by each channel.", "evidence": ["direct", "channel_samples", "calibration"] },
+        { "path": "channels.consistency_rules", "critical": true, "description": "Elements that must remain stable across channels.", "evidence": ["direct", "calibration"] },
+        { "path": "channels.adaptation_rules", "critical": true, "description": "Rules for adapting an idea without merely copying its expression.", "evidence": ["direct", "calibration"] }
+      ]
+    },
+    "team_brand": {
+      "activation_condition": "Multiple people create, approve or publicly represent the same creator brand.",
+      "fields": [
+        { "path": "team.decision_makers", "critical": true, "description": "People or roles with authority over the creator profile.", "evidence": ["direct"] },
+        { "path": "team.approval_workflow", "critical": true, "description": "Required content and profile approval sequence.", "evidence": ["direct", "process_document"] },
+        { "path": "team.brand_constraints", "critical": true, "description": "Shared brand rules that override individual stylistic preferences.", "evidence": ["direct", "brand_guide"] },
+        { "path": "team.spokesperson_boundaries", "critical": true, "description": "Who may speak for which topics, claims and experiences.", "evidence": ["direct"] }
+      ]
+    }
+  }
+}
