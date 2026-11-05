@@ -7,6 +7,14 @@ Instala este sistema:
 https://github.com/afmanu/creator-brain-installer
 ```
 
+## External blind validation
+
+| Date | Prompt | Outcome | Runtime details |
+|---|---|---|---|
+| 2026-11-05 | Repository link only | Installation reported complete with no issues | Not recorded |
+
+This validates the link-only entry experience with one external user. It does not mark a runtime scenario below as passed because the environment, mode and sanitized execution evidence were not recorded.
+
 ## Scenarios
 
 - [ ] Codex with local read and write access.

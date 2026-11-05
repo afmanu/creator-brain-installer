@@ -6,7 +6,7 @@ The profile teaches an AI who the creator is, what they stand for, who they crea
 
 ## Status
 
-**Public beta candidate.** The product contract, finite profile schema, context discovery, evidence model, six-interaction protocol, output templates and synthetic demo are implemented and validated. Blind runtime tests are still pending.
+**Public beta candidate.** The product contract, finite profile schema, context discovery, evidence model, six-interaction protocol, output templates and synthetic demo are implemented and validated. A first external tester completed a link-only blind installation successfully; runtime-specific verification is still pending.
 
 ## The problem it solves
 
@@ -138,7 +138,7 @@ Creator Brain models creative identity and decision criteria. It is not:
 - Automatic installation still depends on the capabilities exposed by each environment.
 - An environment without local write access cannot truthfully claim a full local installation.
 - Hidden model memory and inaccessible previous conversations cannot be used.
-- Blind runtime tests are still pending and documented in `docs/beta-testing.md`.
+- One external link-only installation has succeeded; runtime-specific tests remain pending in `docs/beta-testing.md`.
 
 ## Privacy and safety
 
